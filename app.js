@@ -5,6 +5,7 @@ import cors from 'cors';
 
 
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -50,4 +51,6 @@ app.get("/api/microbes/search", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+const port = process.env.PORT || 5000;
+
+app.listen(process.env.PORT || 5000, () => console.log('Server running on port 5000'));
